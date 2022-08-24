@@ -6,9 +6,10 @@ const outputBox=document.querySelector("#output-box");
 function checkNumberIsLucky()
 {
     const date=dateOfBirth.value;
-    console.log(date);
+    // console.log(date);
     const sum=caculateSum(date);
-    console.log(sum);
+    // console.log(sum);
+    compareValues(sum,luckyNumber.value);
 }
 
 function compareValues(sum,num_lucky){
@@ -25,13 +26,15 @@ function compareValues(sum,num_lucky){
 }
 
 function caculateSum(dob)
-{
+{ 
+    console.log(dob);
     dob=dob.replaceAll("-","")
     let sum=0;
+    console.log(dob)
     for(let i =0;i<dob.length;i++)
     {  sum=sum+ Number(dob.charAt(i));}
+    console.log(sum);
     return sum;
-
 }
 
 // checkNumberButton.addEventListener('click',function getValues(){
@@ -39,4 +42,4 @@ function caculateSum(dob)
 //     console.log(dateOfBirth.value,luckyNumber.value);
 // })
 
-checkNumberButton.addEventListener('click',checkNumberIsLucky())
+checkNumberButton.addEventListener('click',checkNumberIsLucky());
