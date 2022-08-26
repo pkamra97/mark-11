@@ -3,29 +3,37 @@ const luckyNumber =document.querySelector("#lucky-number");
 const checkNumberButton =document.querySelector("#check-number");
 const outputBox=document.querySelector("#output-box");
 
+
+
+
 function checkNumberIsLucky()
 {
     const date=dateOfBirth.value;
-    // console.log(date);
-    const sum=caculateSum(date);
+    console.log(date);
+    const sum=calculateSum(date);
     // console.log(sum);
-    compareValues(sum,luckyNumber.value);
+    // compareValues(sum,luckyNumber.value);
+    if(sum&&date)
+    {compareValues(sum,luckyNumber.value); }
+    else{outputBox.innerText="Please enter both fields" }
 }
 
-function compareValues(sum,num_lucky){
+function compareValues(total,num_lucky){
     // console.log(sum , luckyNumber);
-    if(sum%num_lucky==0)
-    {
-        outputBox.innerText="Your birthday is lucky 🎂🍰";
+    if(total%num_lucky==0)
+    {    outputBox.innerText="Your birthday is lucky 🎂🍰";
         // console.log("Your birthday is lucky");
     }
-    else{
-        outputBox.innerText="Your birthday is not lucky🤕🥴";
+    else{ outputBox.innerText="Your birthday is not lucky🤕🥴";
         // console.log("Your birthday is not lucky");
     }
 }
 
-function caculateSum(dob)
+// #1 problem this is not working don't know why 
+// if we're returning 25 then it gets printed before even eventlistener action
+// but concole.log is not working in other cases 
+
+function calculateSum(dob)
 { 
     console.log(dob);
     dob=dob.replaceAll("-","")
@@ -34,12 +42,13 @@ function caculateSum(dob)
     for(let i =0;i<dob.length;i++)
     {  sum=sum+ Number(dob.charAt(i));}
     console.log(sum);
-    return sum;
+    return 25; 
 }
 
 // checkNumberButton.addEventListener('click',function getValues(){
 
 //     console.log(dateOfBirth.value,luckyNumber.value);
 // })
+// Get values working fine but it won't work without get values inside those functions
 
 checkNumberButton.addEventListener('click',checkNumberIsLucky());
