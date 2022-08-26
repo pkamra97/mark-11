@@ -42,7 +42,8 @@ function calculateSum(dob)
     for(let i =0;i<dob.length;i++)
     {  sum=sum+ Number(dob.charAt(i));}
     console.log(sum);
-    return 25; 
+    // return 25; 
+    return sum;
 }
 
 // checkNumberButton.addEventListener('click',function getValues(){
