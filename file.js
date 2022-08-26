@@ -7,18 +7,17 @@ const outputBox=document.querySelector("#output-box");
 
 
 function checkNumberIsLucky()
-{
-    const date=dateOfBirth.value;
+{   const date=dateOfBirth.value;
     console.log(date);
     const sum=calculateSum(date);
-    // console.log(sum);
+    console.log(sum);
     // compareValues(sum,luckyNumber.value);
-
     //#2 problem the if is not working but else getting executed
     // everytime i run the application in live-server 
     if(sum&&date)
     {compareValues(sum,luckyNumber.value); }
-    else{outputBox.innerText="Please enter both fields" }
+    else
+    {outputBox.innerText="Please enter both fields" }
 }
 
 function compareValues(total,num_lucky){
@@ -55,4 +54,6 @@ function calculateSum(dob)
 // })
 // Get values working fine but it won't work without get values inside those functions
 
-checkNumberButton.addEventListener('click',checkNumberIsLucky());
+checkNumberButton.addEventListener('click',() => {
+    checkNumberIsLucky();
+  });
