@@ -13,6 +13,9 @@ function checkNumberIsLucky()
     const sum=calculateSum(date);
     // console.log(sum);
     // compareValues(sum,luckyNumber.value);
+
+    //#2 problem the if is not working but else getting executed
+    // everytime i run the application in live-server 
     if(sum&&date)
     {compareValues(sum,luckyNumber.value); }
     else{outputBox.innerText="Please enter both fields" }
