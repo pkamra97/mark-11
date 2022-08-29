@@ -55,6 +55,8 @@ function calculateSum(dob)
 // })
 // Get values working fine but it won't work without get values inside those functions
 
-checkNumberButton.addEventListener('click',() => {
-    checkNumberIsLucky();
-  });
+// checkNumberButton.addEventListener('click',() => {
+//     checkNumberIsLucky();
+//   });
+
+checkNumberButton.addEventListener('click',checkNumberIsLucky);
